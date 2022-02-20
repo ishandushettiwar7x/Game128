@@ -12,6 +12,26 @@ h2 {
     font-weight: lighter;
 }
 
+.container {
+    width: 60px;
+    height: 60px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align:center;
+    margin: auto;
+    color: chocolate;
+    background-color: #ffffff;
+    border: 2px solid black;
+    border-radius: 7px;
+    box-shadow: 0 1px 2px 0 rgb(36 39 44 / 15%);
+}
+
+.container::before {
+    content: "Score";
+    color: black;
+}
+
 #field {
     border: 1px solid black;
     margin-top: 50px;

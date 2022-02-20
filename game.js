@@ -1,6 +1,7 @@
 var size = 4;
 var htmlElements;
 var cells;
+var score;
 
 function generateField() {
   if (htmlElements) return;
@@ -44,6 +45,9 @@ function show() {
   for (var x = 0; x < size; x++) {
     for (var y = 0; y < size; y++) {
       var tableData = htmlElements[x][y];
+      var sc = document.getElementById('score');
+      console.log(score);
+      sc.innerHTML = '<br>' + String(score);
       var v = cells[x][y];
       tableData.innerHTML = v == 0 ? '' : String(v);
       tableData.setAttribute('style', 'background-color: rgb(250 235 215 / ' + (100 - ((v/128)*100)) + '%)');
@@ -159,6 +163,7 @@ const handleKeyEvent = (event) => {
     default: return;
   }
   if (clicked) {
+    score++;
     generateInEmptyCell();
     show();
   }
@@ -178,7 +183,7 @@ const handleKeyEvent = (event) => {
 
 
 function init() {
-  console.log('Im here');
+  score = 0;
   generateField();
   generateCells();
   generateInEmptyCell();
